@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+{% extends 'home.html' %}
+<body>
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type ="submit">제출 !</button> 
+        <!-- 장고 안에서는 submit 지원안하므로 -->
+    </form>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+.heading{
+    font-size: 30px;
+    color: rgb(117, 219, 77);
+    text-align: center;
+    background-color: rgb(7, 37, 107);
+}
+
+
+.bg_img{
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    /* width: 200px;
+    height: 150px; */
+}
+
+.content-box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.comment-box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.review_list
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
