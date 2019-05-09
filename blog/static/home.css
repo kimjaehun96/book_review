@@ -1,3 +1,5 @@
+
+
 .heading{
     font-size: 30px;
     color: rgb(117, 219, 77);
@@ -6,13 +8,13 @@
 }
 
 
-.bg_img{
-    /* background-repeat: no-repeat;
+/* .bg_image{
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; */
-    /* width: 200px;
-    height: 150px; */
-}
+    background-size: cover; 
+    width: 200px;
+    height: 150px;
+} */
 
 .content-box{
     display: flex;
@@ -31,4 +33,29 @@
     display: flex;
     flex-direction: column;
     margin-left: 100px;
+    align-items: center;
+}
+
+/* .alert
+{
+    width:200px;
+} */
+
+/* .body{
+    background-image: static(sky2.jpg);
+} */
+
+img.sky
+{
+    width: 100px;
+}
+
+.books{
+    display:flex;
+    
+}
+
+.titleofbook
+{
+
 }

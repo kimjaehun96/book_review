@@ -13,9 +13,9 @@ def home(request):
 def new(request):
     if request.method == 'POST':
         # POST Get 차이
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         post = form.save(commit=False)
-        form.save() #여기가 post.save인지 form.save인지?
+        post.save() #여기가 post.save인지 form.save인지?
         return redirect('detail', post.pk)
        # return redirect('home')
     else: 
@@ -29,7 +29,7 @@ def detail(request, post_pk):
     if request.method == 'POST':
         form = CommentForm(request.POST)
         comment = form.save(commit=False) 
-        comment.post = post
+        comment.post = post #이게 뭔뜻이지?
         comment.save()
 
         return redirect('detail', post.pk)

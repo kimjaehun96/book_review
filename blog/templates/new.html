@@ -9,7 +9,7 @@
 {% extends 'home.html' %}
 <body>
 {% block content %}
-    <form method="POST">
+    <form method="GET" enctype='multipart/form-data'>
         {% csrf_token %}
         {{ form.as_p }}
         <button type ="submit">제출 !</button> 

@@ -9,27 +9,37 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
 </head>
 <body>
-    <div class="title">
-        <div class="heading">
-            <h1>Book Review</h1>
-        </div>
-    </div>
-    {% comment %} <div class="bg_img">
-        <img src= "{% static 'sky2.jpg' %}">
-    </div> {% endcomment %}
-    {% block content %}
-    <div class="review_list">
-        <h2>리뷰 목록</h2>
-        <ul>
-            {% for post in posts %} 
-            <li><a href ="{% url 'detail' post.pk %}">{{ post.title }}</a></li>
-            <br>
-            {% endfor %}
-        <ul>
     
-        <a href="{% url 'new' %}">글쓰기</a>
+        <div class="title">
+            <div class="heading">
+                <h1>Book Review</h1>
+            </div>
+        </div>
+        
+        {% block content %}
+        <div class="review_list">
+            <h2>리뷰 목록</h2>
+            <ul>
+                {% for post in posts %} 
+                
+                <div class="books">
+                    <div class="titleofbook">
+                    <a href ="{% url 'detail' post.pk %}"}>{{ post.title }}
+
+                    </a><br>
+                    </div>
+                    <div class="pictureofbook">
+                    <img src="{{ post.img.url }}" class="sky" alt="sky"style="width : 150px;">
+                    <br>
+                    </div>
+                </div>
+                {% endfor %}
+            <ul>
+        
+            <a href="{% url 'new' %}">글쓰기</a>
+        </div>
+        {% endblock %}
     </div>
-    {% endblock %}
 </body>
 
 </body>
