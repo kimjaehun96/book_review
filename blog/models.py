@@ -13,9 +13,9 @@ class Post(models.Model):
     rating=models.IntegerField(
         
         choices=score, 
-        default=1,
+        default=1,)
+    author = models.CharField(max_length=50, default = "")
     
-    )
     img = models.FileField(null = True)
     def __str__(self):
         return self.title

@@ -2,23 +2,25 @@
 <body>
 {% block content %}
     <div class="body">
-        {% comment %} <img src="{% static 'sky2.jpg' %}"> {% endcomment %}
+        
         <div class="content-box">
             <h2> 제목: {{ post.title }}</h2>
+            <h4> {{ post.author }}</h4>
             <h3> 리뷰: {{ post.content }}</h3>
             <h3> 가격: {{ post.price }} 원 </h3>
             <h4> 평점: {{ post.rating }} 점</h3>
             <h3> 표지: </h3>
-            <img src="{{ post.img.url }}" class="sky" alt="sky"style="width : 150px;">
-                
-            
-                
-            </h3>
+            <img src= "{{ post.img.url }}" class="sky" alt="sky"style="width : 150px;">
+
             <div class="alert alert-primary" role="alert" width:200px; >
             <a href="{% url 'home' %}">글 목록으로 돌아가기 </a>
             </div><br>
+            {% if user.is_authenticated and post.author == user.username %}
             <a href="{% url 'edit' post.pk %}">수정하기</a><br>
             <a href="{% url 'delete' post.pk %}">삭제하기</a><br>
+            {% else %}
+            {% endif %}
+            
             {% comment %} <br><a href="{% url 'delete' posk.pk %}">삭제</a> {% endcomment %}
         </div>
         <div class="comment-box">

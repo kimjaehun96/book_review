@@ -1,6 +1,6 @@
 
 
-.heading{
+.title{
     font-size: 30px;
     color: rgb(117, 219, 77);
     text-align: center;
@@ -15,6 +15,8 @@
     width: 200px;
     height: 150px;
 } */
+
+
 
 .content-box{
     display: flex;
@@ -55,7 +57,27 @@ img.sky
     
 }
 
-.titleofbook
-{
+.navbar {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-}
+  }
+  
+  .navitem {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:visited {
+    color: black;
+  }

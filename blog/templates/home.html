@@ -12,10 +12,23 @@
     
         <div class="title">
             <div class="heading">
-                <h1>Book Review</h1>
+                <a href="{% url 'home' %}"></a>
             </div>
+                <h1>Book Review</h1>
         </div>
-        
+        <div class = "navbar">
+                <div class="navitem">home</div>
+                {% if user.is_authenticated %}
+                <div class="navtime">안녕하세요, {{ user.username }}님!</div>
+                <a href="{% url 'logout' %}">로그아웃</div>
+                {% else %}
+                <div class="navtime"><a href="{% url 'signup' %}">회원가입</div>
+                <div class="navitem">
+                <a href="{% url 'login' %}">로그인</div>
+                {% endif %}
+                
+        </div>
+            
         {% block content %}
         <div class="review_list">
             <h2>리뷰 목록</h2>
@@ -35,8 +48,10 @@
                 </div>
                 {% endfor %}
             <ul>
-        
+            {% if user.is_authenticated %}
             <a href="{% url 'new' %}">글쓰기</a>
+            {% else %}
+            {% endif %}
         </div>
         {% endblock %}
     </div>
